@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+  <script src="{{ url_for('static', filename='changename.js') }}"></script>
+  <title>Project2</title>
+</head>
+<body>
+  <h1>on this page you can change your name <h1>
+    <input type="text" id="name" placeholder="New Username">
+    <form action="/">
+      <button id="namesubmit" type="submit" data-channel="name">Save new name</button>
+    </form>
+</body>
+</html>

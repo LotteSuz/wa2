@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+        <script src="{{ url_for('static', filename='channel.js') }}"></script>
+        <title>Project2</title>
+        <style> #channelname {color: grey;} #listinfo {color:grey;} #listmessage {font-size: 20px;} </style>
+    </head>
+    <body>
+      <h1>Welcome to channel <span id="channelname">{{ channelname }} </span></h1>
+      <h2> Messages </h2>
+      <ul style="list-style-type:none;" id="history">
+        {% for message in messages %}
+        <li><div id="listinfo"> at {{message[2]}} {{message[1]}} said</div><br><div id="listmessage"> {{message[0]}}</div></li>
+        {% endfor %}
+      </ul>
+      <br><br><input type="text" id="message" placeholder="Type message here">
+      <button id="messagesubmit" data-message={{channelname}}>Send message</button>
+    </body>
+</html>
